@@ -1,31 +1,40 @@
-public class Cliente {
+class Cliente {
     private String nome;
     private Banco banco;
-    private ContaCorrente contaCorrente;
-    public Cliente(String nome, Banco banco, ContaCorrente contaCorrente) {
+    private Conta conta;
+
+    public Cliente(String nome, Banco banco, Conta conta) {
         this.nome = nome;
         this.banco = banco;
-        this.contaCorrente = contaCorrente;
+        this.conta = conta;
+        this.conta.setCliente(this);
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public void setBanco(Banco banco) {
-        this.banco = banco;
     }
 
     public Banco getBanco() {
         return banco;
     }
 
-    public ContaCorrente getContaCorrente() {
-        return contaCorrente;
+    public void setBanco(Banco banco) {
+        this.banco = banco;
     }
-    public void setContaCorrente(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
+
+    public Conta getConta() {
+        return conta;
+    }
+
+    public void setConta(Conta conta) {
+        this.conta = conta;
+    }
+    
+    public String getBancoNome() {
+        return banco.getNome();
     }
 }
