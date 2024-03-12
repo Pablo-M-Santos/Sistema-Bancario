@@ -1,11 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class Banco {
+    private String nome;
     private List<Cliente> clientes;
 
-    public Banco() {
+    public Banco(String nome) {
         this.clientes = new ArrayList<>();
+        this.nome = nome;
     }
 
     public void adicionarCliente(Cliente cliente) {
@@ -18,5 +17,9 @@ class Banco {
 
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
