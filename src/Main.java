@@ -21,10 +21,10 @@ public class Main {
 
         // Iterando sobre a lista de clientes do banco e exibindo informações de cada um
         for (Cliente cliente : banco.getClientes()) {
-            System.out.println("Cliente: " + cliente.getNome());
-            System.out.println("Banco: " + cliente.getBanco().getNome());
-            System.out.println("Agência: " + cliente.getConta().getAgencia());
-            System.out.println("Saldo: " + cliente.getConta().getSaldo());
+            System.out.println("Cliente: " + cliente1.getNome());
+            System.out.println("Banco: " + cliente1.getBanco().getNome());
+            System.out.println("Agência: " + cliente1.getConta().getAgencia());
+            System.out.println("Saldo: " + cliente1.getConta().getSaldo());
             System.out.println();
         }
     }
