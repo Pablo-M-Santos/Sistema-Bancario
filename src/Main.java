@@ -1,14 +1,27 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 // Classe principal
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         // Criação de um objeto do tipo Banco com o nome "Caixa"
-        Banco banco = new Banco("Caixa");
+
+        System.out.println("Digite o nome do banco: ");
+        Banco banco = new Banco(scanner.nextLine());
 
         // Criação de uma conta com número 12345 e agência "001"
-        Conta conta1 = new Conta(12345, "001");
+
+        Conta conta1 = new Conta();
+
+        System.out.println("Digite o numero da conta:");
+        conta1.setNumero(scanner.nextInt());
+
+        scanner.nextLine();
+
+        System.out.println("Digite o nome da agência: ");
+        conta1.setAgencia(scanner.nextLine());
 
         // Criação de um cliente com nome "Pablo Moreria Santos", associado ao banco e à conta criados anteriormente
         Cliente cliente1 = new Cliente("Pablo Moreria Santos", banco, conta1);
@@ -18,6 +31,8 @@ public class Main {
 
         // Creditando R$ 1000.0 na conta do cliente
         cliente1.getConta().creditar(1000.0);
+
+        scanner.close();
 
         // Iterando sobre a lista de clientes do banco e exibindo informações de cada um
         for (Cliente cliente : banco.getClientes()) {
